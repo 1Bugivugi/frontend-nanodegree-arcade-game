@@ -13,7 +13,7 @@ This is a clone of a famous Frogger game (that will be updated in the nearest fu
 
 ## Instructions
 
-This project is part of the Front End Web Developer course, provided by Udacity and Google. As FEND student, I've been provided with a starter project, the starter project had some HTML and CSS styling to display a static version of the Memory Game. My task was to make it interactive and responsive.
+This project is part of the Front End Web Developer course, provided by Udacity and Google.
 
 ## Usage
 
