@@ -9,7 +9,7 @@ class Enemy {
       this.sprite = 'images/enemy-bug.png';
       this.x = x;
       this.y = y;
-      this.speed = Math.round(Math.random() * 3) + 1;
+      this.speed = Math.round(Math.random() * 2) + 1;
     };
 
 // Update the enemy's position, required method for game
@@ -18,9 +18,9 @@ class Enemy {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-      this.x = (this.x + dt * this.speed * 150) % (500)
+        this.x = (this.x + dt * this.speed * 150) % (500);
+        ((Math.abs(player.x - this.x) <= 60) && (Math.abs(player.y - this.y) <= 15)) ? reset() : false;
     }
-
 
 // Draw the enemy on the screen, required method for game
     render() {
@@ -33,8 +33,8 @@ class Enemy {
 class Player {
   constructor(x, y){
     this.sprite = 'images/char-boy.png';
-    this.x = x;
-    this.y = y;
+    this.x = 202;
+    this.y = 400;
   }
 
   update(){
@@ -48,7 +48,7 @@ class Player {
   handleInput(destination){
     switch (destination) {
       case 'up': {
-        (this.y - 83 > -5) ? this.y -= 83 : this.y -=83 && reload();
+        (this.y - 83 > -5) ? this.y -= 83 : (this.y -=83 && reload());
         break;
       }
       case 'down': {
@@ -72,7 +72,7 @@ class Player {
  */
 
 const reload = () => {
-  swal("You won!", "Congrats!", "success", { // didnt quite get where to use template literals here
+  swal("You won!", "Congrats!", "success", {
         buttons: {
           restart: {
             text: "Play again?",
@@ -85,18 +85,26 @@ const reload = () => {
       });
 }
 
+const reset = () => {
+    player.x = 202;
+    player.y = 400;
+  }
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
-const enemy1 = new Enemy(-50, 63);
-const enemy4 = new Enemy(-180, 63);
-const enemy2 = new Enemy(-70, 145)
-const enemy5 = new Enemy(-180, 145)
-const enemy3 = new Enemy(-60, 228)
-const enemy6 = new Enemy(-240, 228)
-allEnemies.push(enemy1, enemy2, enemy3, enemy4, enemy5, enemy6);
+// for (var i = 0; i <= 5; i++){
+//   allEnemies[i] = new Enemy();
+// }
+const enemy1 = new Enemy(-190, 63); // 1
+// const enemy4 = new Enemy(-200, 63);
+const enemy2 = new Enemy(-120, 145); // 2
+// const enemy5 = new Enemy(-180, 145);
+const enemy3 = new Enemy(-250, 228); // 3
+// const enemy6 = new Enemy(-240, 228);
+allEnemies.push(enemy1, enemy2, enemy3); // I know this is bad :( But will work for now I guess
+
 // Place the player object in a variable called player
-let player = new Player(202, 400);
+let player = new Player();
 
 
 
