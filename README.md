@@ -7,9 +7,10 @@ This is a clone of a famous Frogger game (that will be updated in the nearest fu
 * [Instructions](#instructions)
 * [Usage](#usage)
 * [Contributing](#contributing)
+* [Future Updates](#FutureUpdates)
 * [Libraries](#libraries)
-* [Regards](#Regards)
-* [Future Updates](#Future Updates)
+* [Regards](#regards)
+
 
 ## Instructions
 
@@ -36,5 +37,4 @@ Here's a list of used external libraries:
  
 ## Regards
 
-This wouldn't have been possible for me without beloved Udacity team and Study Jams by [@Alain91530](https://github.com/Alain91530) and [@
-Antonella Dean](https://github.com/aberdean)
+This wouldn't have been possible for me without beloved Udacity team and Study Jams by [@Alain91530](https://github.com/Alain91530) and [@Antonella Dean](https://github.com/aberdean)
